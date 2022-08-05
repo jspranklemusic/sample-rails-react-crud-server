@@ -10,6 +10,6 @@ ADD . $INSTALL_PATH
 WORKDIR $INSTALL_PATH
 RUN gem install rails bundler
 RUN bundle install
-RUN rails db:migrate 
+RUN rails db:schema:load
 
 ENTRYPOINT [ "rails", "s", "-b", "0.0.0.0" ]
